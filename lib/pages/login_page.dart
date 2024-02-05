@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_06_login/pages/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key});
@@ -129,6 +130,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 22,
+              ),
+              Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+                    },
+                      child: Text(
+                'Não tem uma conta? Cadastre-se!',
+                style: TextStyle(color: Colors.blue[600]),
+              ))),
             ],
           ),
         ),
