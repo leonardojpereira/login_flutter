@@ -20,6 +20,16 @@ class _RegisterState extends State<Register> {
   TextEditingController passwordController = TextEditingController();
 
   void _showWelcomePage() {
+    if (nameController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Por favor, preencha todos os campos.'),
+        backgroundColor: Colors.red,
+      ));
+
+      return;
+    }
     User user = User(
       name: nameController.text,
       email: emailController.text,
@@ -133,7 +143,6 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
               SizedBox(
                 height: 22,
               ),
